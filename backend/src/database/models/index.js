@@ -1,11 +1,11 @@
-const { user,userSchema } = require('./user.model')
-const { lista,listaSchema }= require('./lista.model')
+const { User,UserSchema } = require('./user.model')
+const { Lista,ListaSchema }= require('./lista.model')
 
 function setupModels(sequelize) {
-    user.init(userserSchema.user.config(sequelize))
-    lista.init(listaSchema.lista.config(sequelize))
-    user.associate(sequelize.models)
-    lista.associate(sequelize.models)
+    User.init(UserSchema, User.config(sequelize))
+    Lista.init(ListaSchema, Lista.config(sequelize))
+    User.associate(sequelize.models)
+    Lista.associate(sequelize.models)
 }
 
 module.exports = setupModels

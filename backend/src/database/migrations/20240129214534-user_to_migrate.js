@@ -26,7 +26,14 @@ module.exports = {
         type: Sequelize.DataTypes.BOOLEAN,
         defaultValue: false
       },
-
+      lista_id: {
+        type: Sequelize.DataTypes.INTEGER,
+        defaultValue: false,
+        references:{
+          model: 'lista',
+          key: 'id'
+        }
+      },
     });
   },
 

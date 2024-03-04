@@ -8,25 +8,30 @@ const UserSchema = {
         autoIncrement: true,
         primaryKey: true
     },
-    name: {
+    nombre: {
         type:
             DataTypes.STRING,
         allowNull: false
     },
-    email: {
+    obgetivo: {
         type:
             DataTypes.STRING,
         allowNull: false,
         unique: true
     },
-    password: {
+    fecha: {
         type:
-            DataTypes.STRING,
+            DataTypes.DATE,
         allowNull: false
     },
-    status: {
+    Lider: {
         type:
-            DataTypes.BOOLEAN,
+            DataTypes.STRING,
+        defaultValue: false
+    },
+    area: {
+        type:
+            DataTypes.STRING,
         defaultValue: false
     },
     listaid:{
@@ -35,7 +40,14 @@ const UserSchema = {
         references:{
             model: 'lista',
             key: 'id'
-        }
+        },
+        usuarioid:{
+            field: 'usiario_id',
+            type: DataTypes.INTEGER,
+            references:{
+                model: 'usuario',
+                key: 'id'
+            }
     }
 }
 

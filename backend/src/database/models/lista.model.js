@@ -38,7 +38,7 @@ const ListaSchema={
         allowNull: false
     },
     correoElectronico:{
-        type: DataTypes.EMAIL,
+        type: DataTypes.STRING,
         allowNull: false
     },
     telefono:{
@@ -63,11 +63,11 @@ const ListaSchema={
     }
     
 }
-class lista extends Model {
+class Lista extends Model {
     static associate(models) {
-        static associate(models) {
-            this.hasMany(models.User,{as: 'user',foreignKey:'listaid'})
+        this.hasMany(models.User,{as: 'user',foreignKey:'listaid'})
     }
+
     
         static config(sequelize) {
             return { sequelize, tableName: LISTA_TABLE, modelName: 'Lista', timestamps: false }
@@ -75,4 +75,4 @@ class lista extends Model {
     }
 
 
-module.exports = { LISTA_TABLE, ListaSchema, lista}
+module.exports = { LISTA_TABLE, ListaSchema, Lista}
